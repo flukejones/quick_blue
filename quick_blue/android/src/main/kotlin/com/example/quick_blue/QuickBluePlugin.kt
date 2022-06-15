@@ -209,6 +209,7 @@ class QuickBluePlugin: FlutterPlugin, MethodCallHandler, EventChannel.StreamHand
           "ConnectionState" to "connected"
         ))
       } else {
+        knownGatts.clear()
         cleanConnection(gatt)
         sendMessage(messageConnector, mapOf(
           "deviceId" to gatt.device.address,

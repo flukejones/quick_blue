@@ -35,6 +35,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   void dispose() {
+    print("DISPPOOASDPFOPDSFOWEG)PEWRGWEGREWGREGW");
     super.dispose();
     _subscription?.cancel();
   }
@@ -93,15 +94,13 @@ class _MyAppState extends State<MyApp> {
     return Expanded(
       child: ListView.separated(
         itemBuilder: (context, index) => ListTile(
-          title:
-              Text('${_scanResults[index].name}(${_scanResults[index].rssi})'),
+          title: Text('${_scanResults[index].name}(${_scanResults[index].rssi})'),
           subtitle: Text(_scanResults[index].deviceId),
           onTap: () {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) =>
-                      PeripheralDetailPage(_scanResults[index].deviceId),
+                  builder: (context) => PeripheralDetailPage(_scanResults[index].deviceId),
                 ));
           },
         ),
